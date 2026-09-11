@@ -76,9 +76,9 @@ td.amount button{border-bottom-color:rgb(217 106 27 / 50%)}
 .settlement-final{background:var(--gold);color:#191919;border-color:var(--gold)}
 .settlement-final span,.settlement-final strong{color:#191919}
 .settlement-result{display:flex}
-.settlement-result>div{display:flex;width:50%;flex-direction:column;align-items:center;justify-content:center;gap:7px}
-.settlement-result span{font-size:13px}
-.settlement-result strong{font-size:30px;font-weight:500}
+.settlement-result>div{display:flex;width:50%;align-items:center;justify-content:space-between;gap:12px;padding:0 22px}
+.settlement-result span{font-size:14px;line-height:1.2;white-space:nowrap}
+.settlement-result strong{font-size:28px;font-weight:500;line-height:1;white-space:nowrap}
 .settlement-spent{background:#262626;color:#ddd;border:1px solid #3a3a3a}
 .settlement-returned{background:var(--gold);color:#191919}
 #slide-6.active .settlement-title{animation:reserve-caption-in .8s 8.2s ease-out both}
@@ -93,4 +93,4 @@ td.amount button{border-bottom-color:rgb(217 106 27 / 50%)}
 @keyframes settlement-part-in{from{clip-path:inset(0 100% 0 0);opacity:.25}to{clip-path:inset(0);opacity:1}}
 @keyframes settlement-final-in{from{clip-path:inset(0 0 0 100%);opacity:.25}to{clip-path:inset(0);opacity:1}}
 @media(prefers-reduced-motion:reduce){.settlement-initial,.settlement-finished,.settlement-result{display:none}.settlement-final{opacity:1}.settlement>p{opacity:1}}
-@media(max-width:760px){.settlement{padding-top:0}.settlement-stage{height:62px}.settlement-result span{font-size:12px}.settlement-result strong{font-size:24px}.settlement-initial,.settlement-finished,.settlement-final{padding:0 18px}.settlement-initial strong,.settlement-finished strong,.settlement-final strong{font-size:28px}}
+@media(max-width:760px){.settlement{padding-top:0}.settlement-stage{height:62px}.settlement-result>div{padding:0 12px;gap:7px}.settlement-result span{font-size:12px}.settlement-result strong{font-size:22px}.settlement-initial,.settlement-finished,.settlement-final{padding:0 18px}.settlement-initial strong,.settlement-finished strong,.settlement-final strong{font-size:28px}}
