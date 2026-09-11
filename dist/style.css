@@ -42,5 +42,10 @@ td.amount button{border-bottom-color:rgb(217 106 27 / 50%)}
 @keyframes reserve-caption-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 
 /* Product rate typography */
-.product-nodes article{align-items:start}
-.product-nodes .label{line-height:1}
+.product-nodes{gap:14px}
+.product-nodes article{grid-template-columns:minmax(0,1fr) clamp(140px,34%,190px);grid-template-rows:auto 1fr;gap:0;align-items:start;min-height:132px;padding:0;border:1px solid #363636;border-radius:10px;background:#1d1d1d;overflow:hidden}
+.product-nodes .label{grid-column:1;grid-row:1;padding:22px 24px 8px;color:#ddd;font-size:15px;font-weight:500;line-height:1.4}
+.product-nodes p{grid-column:1;grid-row:2;align-self:end;padding:0 24px 22px;font-size:16px}
+.product-nodes strong{grid-column:2;grid-row:1/3;align-self:stretch;display:flex;align-items:center;justify-content:center;gap:8px;padding:20px;background:#241e1a;border-left:1px solid rgb(217 106 27 / 28%);font-size:clamp(48px,4.6vw,74px);line-height:1}
+.product-nodes small{font-size:18px;letter-spacing:.02em;white-space:nowrap}
+@media(max-width:760px){.product-nodes article{grid-template-columns:minmax(0,1fr) 124px;min-height:112px}.product-nodes .label{padding:18px 18px 7px;font-size:14px}.product-nodes p{padding:0 18px 18px;font-size:14px}.product-nodes strong{padding:14px;font-size:46px}.product-nodes small{font-size:14px}}
