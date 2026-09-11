@@ -11,7 +11,7 @@
 ## Источники и редакторские решения
 
 - Требования: предоставленный PRD «Проработка тарификации (3).docx».
-- Визуальный референс: https://github.com/elitrao/global-dent-presentation — графитовый фон #191919, Manrope, приглушённый фирменный оранжевый #D96A1B, лёгкая крупная типографика. Иллюстрация обложки заменена по запросу пользователя на новый предметный образ единого баланса (unified-balance-orange.png, встроенный ImageGen), а её насыщенность и яркость снижены при отображении.
+- Визуальный референс: https://github.com/elitrao/global-dent-presentation — графитовый фон #191919, Manrope, приглушённый фирменный оранжевый #D96A1B, лёгкая крупная типографика. Интерфейсные акценты остаются оранжевыми, а иллюстрация обложки использует более спокойный золотистый вариант (unified-balance.png, встроенный ImageGen).
 - Шрифты Manrope: @fontsource-variable/manrope 5.2.8 (SIL Open Font License).
 - Логотип IQ Group предоставлен пользователем (logo_itr6kzqv8g.png), установлен в верхнем левом углу на всех слайдах.
 - Промпт обновлённой иллюстрации (встроенный ImageGen, точное редактирование): Change only the champagne/beige/gold accent metal, discs, trims, engraved analytical-bars mark and audio-wave mark, and their subtle reflections to IQ Group's vivid orange, exact base color #FF7B1A. Preserve exactly the current composition, framing, crop, object count, geometry, dark charcoal studio background, matte graphite tray, both smoked-glass slabs and large negative space on the left. Keep the finish premium satin/anodized, photographic and restrained. Avoid beige, gold, yellow, neon glow, text, logos, new objects, layout changes, crop changes, or altered object shapes.

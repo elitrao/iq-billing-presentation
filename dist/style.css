@@ -20,8 +20,6 @@ html,body{overscroll-behavior-x:none}
 @media print{html,body{overflow:visible;height:auto}.header,.footer{display:none}.slide,.slide[hidden]{display:flex!important;position:relative;inset:auto;min-height:100vh;padding:50px;break-after:page;overflow:visible}.cover-art{display:none}.slide{animation:none!important;transform:none!important}}
 
 /* IQ Group brand accents */
-.cover-art{filter:saturate(.68) brightness(.86)}
-@media(min-width:1051px){.cover-art{opacity:.82}}
 .balance-node{border-color:rgb(217 106 27 / 34%);background:#211b17}
 .branches svg{stroke:rgb(217 106 27 / 55%)}
 .reserved{background:repeating-linear-gradient(130deg,#2d241e,#2d241e 6px,#623718 6px,#623718 7px)}
