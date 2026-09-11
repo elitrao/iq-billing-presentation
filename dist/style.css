@@ -31,3 +31,15 @@ td.amount button{border-bottom-color:rgb(217 106 27 / 50%)}
 .migration-bar>div+div{background:#673718}
 .icon-button:hover:not(:disabled){background:#302118}
 @media(max-width:760px){.branches{background:rgb(217 106 27 / 55%)}}
+
+/* Reserve chart sequence */
+#slide-6.active .chart-head{animation:reserve-caption-in .35s .08s ease-out both}
+#slide-6.active .reserved{animation:reserve-segment-in .72s .18s cubic-bezier(.16,1,.3,1) both}
+#slide-6.active .available{animation:reserve-segment-in .58s .68s cubic-bezier(.16,1,.3,1) both}
+#slide-6.active .legend{animation:reserve-caption-in .42s 1.08s ease-out both}
+@keyframes reserve-segment-in{from{clip-path:inset(0 100% 0 0);opacity:.3}to{clip-path:inset(0);opacity:1}}
+@keyframes reserve-caption-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+
+/* Product rate typography */
+.product-nodes article{align-items:start}
+.product-nodes .label{line-height:1}
