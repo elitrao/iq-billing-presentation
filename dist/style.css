@@ -98,6 +98,7 @@ td.amount button{border-bottom-color:rgb(217 106 27 / 50%)}
 /* Keep the dashboard clear of the presentation controls */
 #slide-4 .ui-balance{justify-content:flex-start;align-items:flex-end;gap:46px}
 #slide-4 .bonus-mini{text-align:left}
+#slide-4 .bonus-mini strong{font-size:34px}
 #slide-4 .balance-item strong{line-height:1.25}
 #slide-4 .demo-products{gap:14px}
 #slide-4 .demo-products article{padding:18px 20px;border:1px solid #363636;border-radius:12px;background:#242424}
