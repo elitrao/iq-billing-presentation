@@ -10,7 +10,7 @@
 @media(max-width:760px){.brand img{width:150px}.cover-art{opacity:.58}}
 html,body{overscroll-behavior-x:none}
 #deck,.slide{touch-action:pan-y}
-.header{padding-left:clamp(14px,1.8vw,34px)}
+.header{padding-left:var(--x)}
 .slide{overflow-x:hidden;overflow-y:auto}
 .slide.is-entering{animation:fade-in .42s ease both}
 .slide.is-leaving{animation:fade-out .2s ease both;pointer-events:none}
