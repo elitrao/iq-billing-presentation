@@ -33,6 +33,9 @@ td.amount button{border-bottom-color:rgb(217 106 27 / 50%)}
 @media(max-width:760px){.branches{background:rgb(217 106 27 / 55%)}}
 
 /* Reserve chart sequence */
+#slide-6{isolation:isolate}
+#slide-6>.eyebrow,#slide-6>h2,#slide-6>.reserve-layout{position:relative;z-index:1}
+.reserve-art{position:absolute;z-index:0;top:-115px;right:-35px;width:min(56vw,840px);height:auto;opacity:.46;mix-blend-mode:screen;filter:saturate(.82) brightness(.8);pointer-events:none;mask-image:linear-gradient(to bottom,#000 0,#000 66%,transparent 96%)}
 .reserve-stage{position:relative;height:62px;border-radius:4px;overflow:hidden}
 .reserve-stage .segmented{position:absolute;inset:0;height:100%}
 .balance-initial,.reserve-event{position:absolute;inset:0;display:grid;place-items:center;background:var(--gold);color:#191919;font-size:18px;font-weight:600}
@@ -93,4 +96,4 @@ td.amount button{border-bottom-color:rgb(217 106 27 / 50%)}
 @keyframes settlement-part-in{from{clip-path:inset(0 100% 0 0);opacity:.25}to{clip-path:inset(0);opacity:1}}
 @keyframes settlement-final-in{from{clip-path:inset(0 0 0 100%);opacity:.25}to{clip-path:inset(0);opacity:1}}
 @media(prefers-reduced-motion:reduce){.settlement-initial,.settlement-finished,.settlement-result{display:none}.settlement-final{opacity:1}.settlement>p{opacity:1}}
-@media(max-width:760px){.settlement{padding-top:0}.settlement-stage{height:62px}.settlement-result>div{padding:0 12px;gap:7px}.settlement-result span{font-size:12px}.settlement-result strong{font-size:22px}.settlement-initial,.settlement-finished,.settlement-final{padding:0 18px}.settlement-initial strong,.settlement-finished strong,.settlement-final strong{font-size:28px}}
+@media(max-width:760px){.reserve-art{display:none}.settlement{padding-top:0}.settlement-stage{height:62px}.settlement-result>div{padding:0 12px;gap:7px}.settlement-result span{font-size:12px}.settlement-result strong{font-size:22px}.settlement-initial,.settlement-finished,.settlement-final{padding:0 18px}.settlement-initial strong,.settlement-finished strong,.settlement-final strong{font-size:28px}}
