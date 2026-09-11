@@ -33,10 +33,17 @@ td.amount button{border-bottom-color:rgb(217 106 27 / 50%)}
 @media(max-width:760px){.branches{background:rgb(217 106 27 / 55%)}}
 
 /* Reserve chart sequence */
-#slide-6.active .chart-head{animation:reserve-caption-in .35s .08s ease-out both}
-#slide-6.active .reserved{animation:reserve-segment-in .72s .18s cubic-bezier(.16,1,.3,1) both,reserve-stripes-flow .85s .9s linear infinite}
-#slide-6.active .available{animation:reserve-segment-in .58s .68s cubic-bezier(.16,1,.3,1) both}
-#slide-6.active .legend{animation:reserve-caption-in .42s 1.08s ease-out both}
+.reserve-stage{position:relative;height:62px;border-radius:4px;overflow:hidden}
+.reserve-stage .segmented{position:absolute;inset:0;height:100%}
+.balance-initial,.reserve-event{position:absolute;inset:0;display:grid;place-items:center;background:var(--gold);color:#191919;font-size:18px;font-weight:600}
+#slide-6.active .chart-head{animation:reserve-caption-in .5s .1s ease-out both}
+#slide-6.active .balance-initial{animation:reserve-initial-balance 2.7s .45s cubic-bezier(.16,1,.3,1) both}
+#slide-6.active .reserve-event{animation:reserve-event-message 1.8s 2.6s ease-in-out both}
+#slide-6.active .reserved{animation:reserve-segment-in .9s 4.25s cubic-bezier(.16,1,.3,1) both,reserve-stripes-flow 1.05s 5.6s linear infinite}
+#slide-6.active .available{animation:reserve-segment-in .8s 5.05s cubic-bezier(.16,1,.3,1) both}
+#slide-6.active .legend{animation:reserve-caption-in .55s 6s ease-out both}
+@keyframes reserve-initial-balance{0%{clip-path:inset(0 100% 0 0);opacity:1}28%,78%{clip-path:inset(0);opacity:1}100%{clip-path:inset(0);opacity:0}}
+@keyframes reserve-event-message{0%{opacity:0;transform:scale(.985)}25%,72%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
 @keyframes reserve-segment-in{from{clip-path:inset(0 100% 0 0);opacity:.3}to{clip-path:inset(0);opacity:1}}
 @keyframes reserve-stripes-flow{to{background-position:14px 0}}
 @keyframes reserve-caption-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
