@@ -3,7 +3,7 @@ const slides=[...document.querySelectorAll('.slide')];
 const chapters=['Новая модель','От тарифов к балансу','Стоимость использования','Личный кабинет','Пополнение и бонусы','Резерв Тренера','Защита баланса','История операций','Миграция клиентов','Итоги'];
 const prev=document.getElementById('prev'),next=document.getElementById('next');
 const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
-let current=0,transitioning=false,pointer=null;
+let current=0,transitioning=false;
 const clamp=n=>Math.max(0,Math.min(slides.length-1,n));
 function fromHash(){const match=location.hash.match(/^#slide-(\d+)$/);return match?clamp(Number(match[1])-1):0;}
 const dots=slides.map((s,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`${i+1}. ${chapters[i]}`);b.addEventListener('click',()=>go(i));document.querySelector('.dots').append(b);return b;});
@@ -13,9 +13,6 @@ current=fromHash();slides.forEach((s,i)=>{s.hidden=i!==current;s.inert=i!==curre
 prev.addEventListener('click',()=>go(current-1));next.addEventListener('click',()=>go(current+1));
 window.addEventListener('hashchange',()=>go(fromHash(),false));window.addEventListener('popstate',()=>go(fromHash(),false));
 window.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||e.target.closest('button,a,input,select,textarea,[contenteditable=true]'))return;if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(current+1);}else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(current-1);}else if(e.key==='Home'){e.preventDefault();go(0);}else if(e.key==='End'){e.preventDefault();go(slides.length-1);}});
-document.getElementById('deck').addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'||e.target.closest('button,a,input,.table-scroll'))return;pointer={x:e.clientX,y:e.clientY};});
-document.getElementById('deck').addEventListener('pointerup',e=>{if(!pointer)return;const dx=e.clientX-pointer.x,dy=e.clientY-pointer.y;pointer=null;if(Math.abs(dx)>65&&Math.abs(dx)>Math.abs(dy)*1.5)go(current+(dx<0?1:-1));});
-document.getElementById('deck').addEventListener('pointercancel',()=>{pointer=null;});
 document.querySelectorAll('.switch').forEach(b=>{const state=b.closest('article').querySelector('.product-state'),initial=state.innerHTML;b.addEventListener('click',()=>{const on=b.getAttribute('aria-checked')!=='true';b.setAttribute('aria-checked',String(on));state.innerHTML=on?initial:'Выключен · новые платные операции не запускаются';});});
 document.getElementById('detail-toggle').addEventListener('click',e=>{const b=e.currentTarget,expanded=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(expanded));document.getElementById('history-detail').hidden=!expanded;});
 const full=document.getElementById('fullscreen');if(!document.fullscreenEnabled)full.hidden=true;full.addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{full.hidden=true;}});document.addEventListener('fullscreenchange',()=>{const active=!!document.fullscreenElement;full.setAttribute('aria-label',active?'Выйти из полноэкранного режима':'Полноэкранный режим');full.title=full.getAttribute('aria-label');});
