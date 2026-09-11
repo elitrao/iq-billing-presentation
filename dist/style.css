@@ -96,6 +96,21 @@ td.amount button{border-bottom-color:rgb(217 106 27 / 50%)}
 @media(max-width:760px){.settlement{padding-top:0}.settlement-stage{height:62px}.settlement-result>div{padding:0 12px;gap:7px}.settlement-result span{font-size:12px}.settlement-result strong{font-size:22px}.settlement-initial,.settlement-finished,.settlement-final{padding:0 18px}.settlement-initial strong,.settlement-finished strong,.settlement-final strong{font-size:28px}}
 
 /* Keep the dashboard clear of the presentation controls */
+#slide-4 .ui-balance{justify-content:flex-start;align-items:flex-end;gap:46px}
+#slide-4 .bonus-mini{text-align:left}
+#slide-4 .balance-item strong{line-height:1.25}
+#slide-4 .demo-products{gap:14px}
+#slide-4 .demo-products article{padding:18px 20px;border:1px solid #363636;border-radius:12px;background:#242424}
+#slide-4 .product-heading{margin-bottom:15px;padding-bottom:14px;border-bottom:1px solid #383838}
+#slide-4 .product-name,#slide-4 .product-actions{display:flex;align-items:center;gap:9px}
+#slide-4 .status-badge{display:grid;place-items:center;width:18px;height:18px;border-radius:6px;font-size:11px;font-weight:700}
+#slide-4 .status-badge.analyst{color:#76dcaa;background:rgb(56 181 121 / 18%)}
+#slide-4 .status-badge.trainer{color:#68aef5;background:rgb(72 145 219 / 18%);font-size:9px}
+#slide-4 .info-dot,#slide-4 .metric-info{display:inline-grid;place-items:center;width:13px;height:13px;border-radius:50%;background:#666;color:#202020;font:700 9px/1 Arial,sans-serif;font-style:normal}
+#slide-4 .product-metric{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:11px;color:#d8d8d8}
+#slide-4 .product-metric span{font-size:13px;color:#929292}
+#slide-4 .product-metric strong,#slide-4 .product-metric b{font-size:15px;font-weight:550;color:#f0f0f0;white-space:nowrap}
+#slide-4 .product-state{line-height:1.4}
 #slide-4{padding-top:10px}
 #slide-4 .eyebrow{margin-bottom:16px}
 #slide-4 .dashboard-layout{margin-top:18px}
