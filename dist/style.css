@@ -126,6 +126,7 @@ body:has(#slide-6.active) .brand img{content:url("./assets/iq-group-logo-trainer
 #slide-1 .cover-rates span:before{content:'';position:absolute;inset:0 auto 0 0;width:3px;background:var(--gold)}
 #slide-1 .cover-rates b{font-size:24px;margin-top:8px}
 @media(max-width:760px){#slide-1 .cover-rates{gap:8px;margin-top:28px}#slide-1 .cover-rates span{min-width:0;padding:13px 14px 12px}#slide-1 .cover-rates b{font-size:19px}}
+#slide-1 .cover-rates span,#slide-2 .compare>div:last-child,#slide-10 .closing-rates span{box-shadow:none}
 #slide-4 .balance-item strong{line-height:1.25}
 #slide-4 .demo-products{gap:14px}
 #slide-4 .demo-products article{padding:18px 20px;border:1px solid #363636;border-radius:12px;background:#242424}
