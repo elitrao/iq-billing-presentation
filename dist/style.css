@@ -107,6 +107,11 @@ td.amount button{border-bottom-color:rgb(217 106 27 / 50%)}
 body:has(#slide-6.active) .dots button[aria-current=true]:after,
 body:has(#slide-6.active) #progress{background:#6467f2}
 body:has(#slide-6.active) .brand img{content:url("./assets/iq-group-logo-trainer.png")}
+#slide-10.closing{isolation:isolate}
+#slide-10 .eyebrow,#slide-10 h2,#slide-10 .closing-bottom{position:relative;z-index:1}
+#slide-10 .closing-bottom{justify-content:flex-start}
+#slide-10 .closing-art{position:absolute;width:72vw;max-width:1380px;height:auto;right:-5vw;top:50%;transform:translateY(-50%);z-index:-1;opacity:.72;mix-blend-mode:lighten;pointer-events:none;mask-image:linear-gradient(to right,transparent,#000 26%)}
+@media(max-width:760px){#slide-10 .closing-art{width:145%;right:-62%;top:22%;transform:none;opacity:.42;mask-image:linear-gradient(to bottom,#000,transparent 92%)}#slide-10 .closing-bottom{margin-top:28px}}
 #slide-4 .balance-item strong{line-height:1.25}
 #slide-4 .demo-products{gap:14px}
 #slide-4 .demo-products article{padding:18px 20px;border:1px solid #363636;border-radius:12px;background:#242424}
