@@ -110,8 +110,17 @@ body:has(#slide-6.active) .brand img{content:url("./assets/iq-group-logo-trainer
 #slide-10.closing{isolation:isolate}
 #slide-10 .eyebrow,#slide-10 h2,#slide-10 .closing-bottom{position:relative;z-index:1}
 #slide-10 .closing-bottom{justify-content:flex-start}
+#slide-10 .closing-rates{gap:12px}
+#slide-10 .closing-rates span{position:relative;min-width:170px;padding:16px 18px 15px;border:1px solid rgb(217 106 27 / 24%);border-radius:10px;background:linear-gradient(145deg,rgb(39 35 31 / 92%),rgb(29 29 29 / 88%));box-shadow:inset 0 1px rgb(255 255 255 / 4%),0 12px 30px rgb(0 0 0 / 16%);overflow:hidden}
+#slide-10 .closing-rates span:before{content:'';position:absolute;inset:0 auto 0 0;width:3px;background:var(--gold)}
+#slide-10 .closing-rates b{font-size:25px;margin-top:8px}
 #slide-10 .closing-art{position:absolute;width:72vw;max-width:1380px;height:auto;right:-5vw;top:50%;transform:translateY(-50%);z-index:-1;opacity:.72;mix-blend-mode:lighten;pointer-events:none;mask-image:linear-gradient(to right,transparent,#000 26%)}
-@media(max-width:760px){#slide-10 .closing-art{width:145%;right:-62%;top:22%;transform:none;opacity:.42;mask-image:linear-gradient(to bottom,#000,transparent 92%)}#slide-10 .closing-bottom{margin-top:28px}}
+@media(max-width:760px){#slide-10 .closing-art{width:145%;right:-62%;top:22%;transform:none;opacity:.42;mask-image:linear-gradient(to bottom,#000,transparent 92%)}#slide-10 .closing-bottom{margin-top:28px}#slide-10 .closing-rates{gap:8px}#slide-10 .closing-rates span{min-width:0;padding:13px 14px 12px}#slide-10 .closing-rates b{font-size:20px}}
+#slide-2 .compare{align-items:stretch}
+#slide-2 .compare>.old{padding-top:26px}
+#slide-2 .compare>div:last-child{position:relative;padding:25px 28px 27px;border:1px solid rgb(217 106 27 / 28%);border-radius:12px;background:linear-gradient(145deg,rgb(40 35 31 / 94%),rgb(28 28 28 / 90%));box-shadow:inset 0 1px rgb(255 255 255 / 4%),0 18px 46px rgb(0 0 0 / 18%);overflow:hidden}
+#slide-2 .compare>div:last-child:before{content:'';position:absolute;inset:0 auto 0 0;width:3px;background:var(--gold)}
+@media(max-width:760px){#slide-2 .compare>.old{padding-top:20px}#slide-2 .compare>div:last-child{padding:22px 20px 24px}}
 #slide-4 .balance-item strong{line-height:1.25}
 #slide-4 .demo-products{gap:14px}
 #slide-4 .demo-products article{padding:18px 20px;border:1px solid #363636;border-radius:12px;background:#242424}
