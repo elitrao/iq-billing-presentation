@@ -132,6 +132,11 @@ body:has(#slide-6.active) .brand img{content:url("./assets/iq-group-logo-trainer
 #slide-5 .bonus-order>div{margin-top:15px}
 @media(max-width:760px){#slide-5 .bonus-order{margin-top:28px;padding:18px 19px 20px}}
 #slide-5 .bonus-layout{grid-template-columns:minmax(0,650px)}
+#slide-5{isolation:isolate}
+#slide-5 .eyebrow,#slide-5 h2,#slide-5 .bonus-layout{position:relative;z-index:1}
+#slide-5 .bonus-art{position:absolute;width:66vw;max-width:1180px;height:auto;right:-5vw;top:54%;transform:translateY(-50%);z-index:-1;opacity:.68;mix-blend-mode:lighten;pointer-events:none;mask-image:linear-gradient(to right,transparent,#000 27%)}
+@media(min-width:761px) and (prefers-reduced-motion:no-preference){#slide-1 .cover-art{transform:translate3d(var(--art-x,0px),calc(-50% + var(--art-y,0px)),0);will-change:transform}}
+@media(max-width:760px){#slide-5 .bonus-art{width:145%;right:-66%;top:20%;transform:none;opacity:.38;mask-image:linear-gradient(to bottom,#000,transparent 92%)}}
 #slide-4 .balance-item strong{line-height:1.25}
 #slide-4 .demo-products{gap:14px}
 #slide-4 .demo-products article{padding:18px 20px;border:1px solid #363636;border-radius:12px;background:#242424}
