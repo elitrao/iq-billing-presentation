@@ -106,6 +106,7 @@ td.amount button{border-bottom-color:rgb(217 106 27 / 50%)}
 #slide-6 .settlement-finished{background:#222235;border-color:rgb(100 103 242 / 35%)}
 body:has(#slide-6.active) .dots button[aria-current=true]:after,
 body:has(#slide-6.active) #progress{background:#6467f2}
+body:has(#slide-6.active) .brand img{content:url("./assets/iq-group-logo-trainer.png")}
 #slide-4 .balance-item strong{line-height:1.25}
 #slide-4 .demo-products{gap:14px}
 #slide-4 .demo-products article{padding:18px 20px;border:1px solid #363636;border-radius:12px;background:#242424}
