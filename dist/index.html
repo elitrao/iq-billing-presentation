@@ -6,9 +6,20 @@
   <meta name="description" content="Новая система тарификации IQ Mentor: единый баланс, оплата по минутам и прозрачные списания.">
   <link rel="icon" href="./assets/favicon-balance.svg?v=3" type="image/svg+xml">
   <title>IQ Mentor — единый баланс</title>
-  <link rel="stylesheet" href="./style.css?v=history-clean-20260928"><script src="./app.js?v=history-clean-20260928" defer></script>
+  <script>document.documentElement.classList.add('has-js')</script>
+  <link rel="stylesheet" href="./style.css?v=intro-stable-20260929"><script src="./app.js?v=intro-stable-20260929" defer></script>
 </head>
-<body>
+<body class="intro-pending">
+<div class="intro-screen" id="intro-screen" aria-hidden="true">
+  <div class="intro-glow intro-glow-analyst"></div><div class="intro-glow intro-glow-trainer"></div>
+  <div class="intro-content">
+    <img class="intro-logo" src="./assets/iq-group-logo.png" alt="" width="216" height="55">
+    <div class="intro-balance" aria-hidden="true"><span class="intro-orbit"><i></i><i></i></span><b>₽</b></div>
+    <p>Единый баланс</p>
+    <div class="intro-progress"><span></span></div>
+    <div class="intro-products"><span>AI Аналитик</span><i></i><span>AI Тренер</span></div>
+  </div>
+</div>
 <header class="header"><a class="brand" href="#slide-1" aria-label="IQ Group — первый слайд"><img src="./assets/iq-group-logo.png" alt="IQ Group" width="216" height="55"></a></header>
 <main id="deck" aria-label="Презентация новой тарификации">
  <section class="slide cover active" id="slide-1" aria-labelledby="title-1">

@@ -155,3 +155,44 @@ body:has(#slide-6.active) .brand img{content:url("./assets/iq-group-logo-trainer
 
 /* Compact dashboard for short presentation windows */
 @media(max-height:620px) and (min-width:761px){#slide-4{padding-top:6px;padding-bottom:12px}#slide-4 .eyebrow{margin-bottom:10px}#slide-4 .dashboard-layout{margin-top:14px}#slide-4 .ui-demo{padding:14px 32px}#slide-4 .ui-balance{padding:10px 0}#slide-4 .ui-balance strong{line-height:1.25}#slide-4 .demo-products{padding-top:14px}#slide-4 .product-heading{margin-bottom:10px}#slide-4 .demo-products p{margin-top:9px;line-height:1.4}#slide-4 .product-state{margin-top:9px;line-height:1.4}#slide-4 .demo-note{margin-top:12px;line-height:1.4}}
+
+/* Opening sequence */
+.intro-screen{display:none}
+.has-js .intro-screen{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:hidden;background:#171717;opacity:1;transform:scale(1);isolation:isolate}
+.intro-glow{position:absolute;width:min(58vw,900px);aspect-ratio:1;border-radius:50%;filter:blur(110px);opacity:.14;pointer-events:none}
+.intro-glow-analyst{left:-22vw;bottom:-48vw;background:#d96a1b;animation:intro-glow-left 2.3s cubic-bezier(.16,1,.3,1) both}
+.intro-glow-trainer{right:-22vw;top:-48vw;background:#6467f2;animation:intro-glow-right 2.3s cubic-bezier(.16,1,.3,1) both}
+.intro-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;width:min(520px,80vw)}
+.intro-logo{width:190px;height:auto;opacity:0;transform:translateY(12px);animation:intro-rise .72s .12s cubic-bezier(.16,1,.3,1) forwards}
+.intro-balance{position:relative;display:grid;place-items:center;width:116px;height:116px;margin:42px 0 28px;border:1px solid rgb(255 255 255 / 10%);border-radius:50%;background:rgb(255 255 255 / 2%);opacity:0;transform:scale(.86);animation:intro-balance-in .8s .42s cubic-bezier(.16,1,.3,1) forwards}
+.intro-balance:before{content:'';position:absolute;inset:9px;border:1px solid rgb(255 255 255 / 5%);border-radius:50%}
+.intro-balance b{font-size:47px;font-weight:300;line-height:1;color:#f4f4f4}
+.intro-orbit{position:absolute;inset:-1px;animation:intro-orbit 3.6s .55s linear infinite}
+.intro-orbit i{position:absolute;top:4px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#d96a1b;box-shadow:0 0 18px rgb(217 106 27 / 55%)}
+.intro-orbit i+ i{top:auto;bottom:4px;background:#6467f2;box-shadow:0 0 18px rgb(100 103 242 / 55%)}
+.intro-content>p{color:#f2f2f2;font-size:clamp(24px,2.3vw,34px);font-weight:350;letter-spacing:-.035em;opacity:0;transform:translateY(9px);animation:intro-rise .72s .7s cubic-bezier(.16,1,.3,1) forwards}
+.intro-progress{width:min(320px,68vw);height:1px;margin-top:25px;background:rgb(255 255 255 / 11%);overflow:hidden;opacity:0;animation:intro-fade .35s .85s ease forwards}
+.intro-progress span{display:block;width:100%;height:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,#d96a1b 0 48%,#6467f2 52% 100%);animation:intro-progress 1.05s .9s cubic-bezier(.65,0,.35,1) forwards}
+.intro-products{display:flex;align-items:center;gap:13px;margin-top:16px;color:#969696;font-size:12px;letter-spacing:.05em;opacity:0;animation:intro-fade .55s 1.05s ease forwards}
+.intro-products i{width:3px;height:3px;border-radius:50%;background:#555}
+/* Keep #deck free of filters/transforms: they make this zero-height parent
+   the containing block for absolutely positioned slides. Fade opacity only. */
+.has-js .header,.has-js #deck,.has-js .footer{transition:opacity .85s .1s ease}
+.has-js .intro-pending .header,.has-js .intro-pending #deck,.has-js .intro-pending .footer{opacity:0}
+.has-js .intro-pending.intro-closing .header,.has-js .intro-pending.intro-closing #deck,.has-js .intro-pending.intro-closing .footer{opacity:1}
+.intro-closing .intro-screen{pointer-events:none;animation:intro-screen-close 1.8s .12s cubic-bezier(.65,0,.2,1) forwards}
+.intro-closing .intro-content{animation:intro-content-close 1.65s cubic-bezier(.4,0,.2,1) forwards}
+.intro-closing .intro-glow{animation:intro-glow-close 1.75s ease forwards}
+@keyframes intro-rise{to{opacity:1;transform:translateY(0)}}
+@keyframes intro-fade{to{opacity:1}}
+@keyframes intro-balance-in{to{opacity:1;transform:scale(1)}}
+@keyframes intro-orbit{to{transform:rotate(360deg)}}
+@keyframes intro-progress{to{transform:scaleX(1)}}
+@keyframes intro-glow-left{from{transform:translate(-20%,-10%) scale(.65)}to{transform:translate(18%,-12%) scale(1)}}
+@keyframes intro-glow-right{from{transform:translate(20%,10%) scale(.65)}to{transform:translate(-18%,12%) scale(1)}}
+@keyframes intro-content-close{0%,55%{opacity:1;transform:scale(1);filter:blur(0)}100%{opacity:0;transform:scale(1.035);filter:blur(3px)}}
+@keyframes intro-glow-close{to{opacity:0}}
+@keyframes intro-screen-close{0%,12%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.018)}}
+@media(max-width:760px){.intro-logo{width:155px}.intro-balance{width:100px;height:100px;margin:34px 0 24px}.intro-balance b{font-size:41px}.intro-glow{width:115vw}.intro-glow-analyst{left:-68vw;bottom:-50vw}.intro-glow-trainer{right:-68vw;top:-50vw}}
+@media(prefers-reduced-motion:reduce){.has-js .intro-screen{display:none}.has-js .intro-pending .header,.has-js .intro-pending #deck,.has-js .intro-pending .footer{opacity:1}}
+@media print{.intro-screen{display:none!important}}

@@ -1,8 +1,32 @@
 'use strict';
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+const intro=document.getElementById('intro-screen');
+if(intro){
+  const started=performance.now();
+  const closeIntro=()=>{
+    const finish=()=>{
+      let cleanupTimer;
+      const cleanup=()=>{
+        clearTimeout(cleanupTimer);
+        intro.removeEventListener('animationend',onIntroEnd);
+        document.body.classList.remove('intro-pending','intro-closing');
+        intro.remove();
+      };
+      const onIntroEnd=event=>{
+        if(event.target===intro&&event.animationName==='intro-screen-close')cleanup();
+      };
+      if(reduce.matches){cleanup();return;}
+      intro.addEventListener('animationend',onIntroEnd);
+      document.body.classList.add('intro-closing');
+      cleanupTimer=setTimeout(cleanup,2300);
+    };
+    setTimeout(finish,reduce.matches?0:Math.max(0,1650-(performance.now()-started)));
+  };
+  if(document.readyState==='complete')closeIntro();else window.addEventListener('load',closeIntro,{once:true});
+}
 const slides=[...document.querySelectorAll('.slide')];
 const chapters=['Новая модель','От тарифов к балансу','Стоимость использования','Личный кабинет','Пополнение и бонусы','Резерв Тренера','Защита баланса','История операций','Миграция клиентов','Итоги'];
 const prev=document.getElementById('prev'),next=document.getElementById('next');
-const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
 let current=0,transitioning=false;
 const clamp=n=>Math.max(0,Math.min(slides.length-1,n));
 function fromHash(){const match=location.hash.match(/^#slide-(\d+)$/);return match?clamp(Number(match[1])-1):0;}
